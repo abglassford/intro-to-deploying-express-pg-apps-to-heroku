@@ -9,11 +9,7 @@
 
 ## EXERCISE SUMMARY
 
-__STEP 1:__
 Included in this repo is a CRUD app that uses a local Postgres database. Your mission will be to deploy the included repo to Heroku and connect it to a Heroku provided Postgres database.
-
-__STEP 2:__
-Deploy your Restaurants CRUD app to Heroku and update your README to include the url for your deployed app.
 
 ## What is Heroku?
 
@@ -27,8 +23,8 @@ Google `how does heroku work` and click on the `https://devcenter.heroku.com` li
 1. What is a config variable?
 1. What is a release?
 
-Using [draw.io](https://www.draw.io/) (or a software of your choosing), draw a diagram that illustrates how Heroku works and incorporate the above components. Then, add a `your-name.md` file to
-this repo and add your answers to each of the above questions. Add your diagaram, `add`, `commit`, `push` and submit a PR.
+Draw a diagram that illustrates how Heroku works and incorporate the above components. Then, add a `your-name.md` file to
+this repo and add your answers to each of the above questions.
 
 ## Getting Started with Heroku
 
@@ -45,7 +41,7 @@ $ heroku create
 This command sets up your app, with a random name, on Heroku as well as a Git remote called `heroku`. Alertantively, you can pass in a name as a command line argument to create your own name:
 
 ```sh
-$ heroku create restaurants-martha (replace the end with your first name)
+$ heroku create restaurants-martha
 ```
 
 You can also rename your app by running the command:
