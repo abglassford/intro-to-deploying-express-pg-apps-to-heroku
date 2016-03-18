@@ -1,9 +1,9 @@
 ## Objectives
 
 * Understand what Heroku is and how it works
-* Be able to use Heroku logs to debug 
+* Be able to use Heroku logs to debug
 * Understand what an environment variable is
-* Be able to use the `dotenv` core module
+* Be able to use the `dotenv` npm package
 * Be able to deploy an Node/Express app to Heroku using the CLI
 * Be able to connect your app to a postgres database on heroku
 
@@ -23,10 +23,11 @@ Google `how does heroku work` and click on the `https://devcenter.heroku.com` li
 1. What is a config variable?
 1. What is a release?
 
-Draw a diagram that illustrates how Heroku works and incorporate the above components. Then, add a `your-name.md` file to
-this repo and add your answers to each of the above questions.
+Draw a diagram that illustrates how Heroku works and incorporate the above components. Then, add a `your-name.md` file to this repo and add your answers to each of the above questions.
 
 ## Getting Started with Heroku
+
+If you don't already have a heroku account, follow these steps.
 
 1. Sign up for [Heroku](https://signup.heroku.com/)
 1. Download the Heroku [Toolbelt](https://toolbelt.heroku.com/)
@@ -44,7 +45,7 @@ This command sets up your app, with a random name, on Heroku as well as a Git re
 $ heroku create restaurants-martha
 ```
 
-You can also rename your app by running the command:
+**PROTIP** - You can also rename your app by running the command:
 
 ```sh
 $ heroku apps:rename <name-you-want-to-use-instead>
@@ -119,11 +120,14 @@ You'll need some help getting your app to talk to your environment variables, bo
 Google `npm dotenv` and read the docs to help you get up and running with a `.env` file in your Node.js app.
 
 1. add a `.env` file to your app
-1. update your database configuration to use environment variables
-
-```
-process.env.DATABASE_URL || 'postgres://localhost/library'
-```
+1. in your `.env` file add the following line:
+  ```
+  DATABASE_URL=postgres://localhost/library
+  ```
+1. find the line in `routes/books.js` that refers to `postgres://localhost/library` and change it to:
+  ```
+  process.env.DATABASE_URL || 'postgres://localhost/library'
+  ```
 
 `add`, `commit`, `git push heroku master` and check your app again. OR if you think it is still broken, what other steps might still need to be taken for your app to work on Heroku?
 
@@ -133,7 +137,13 @@ process.env.DATABASE_URL || 'postgres://localhost/library'
 heroku pg:psql
 ```
 
-This drops you into your Heroku database. You can execute raw `sql` here just as you do for your local database.
+This opens a `psql` session that's connected to your database on Heroku. You can execute raw `sql` here just as you do for your local database.
+
+To run sql files, you can execute:
+
+```
+heroku pg:psql < myfile.sql
+```
 
 Continue the debugging process until you're app is up and running as it should.
 
