@@ -112,7 +112,7 @@ You should see an environment variable called `DATABASE_URL` with a value that i
 
 `add`, `commit`, `git push heroku master` and check your app again.
 
-## Using the `dotenv` core module to config environment variables
+## Using the `dotenv` package to config environment variables
 
 You'll need some help getting your app to talk to your environment variables, both locally as well as deployed.
 
